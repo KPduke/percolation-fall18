@@ -37,7 +37,7 @@ public class PercolationBFS extends PercolationDFSFast{
 				queInt.add(newval);
 			}
 			if(inBounds(nrow, ncol+1) && !isFull(nrow, ncol+1) && isOpen(nrow, ncol+1)) {
-				myGrid[nrow][col+1] = FULL;
+				myGrid[nrow][ncol+1] = FULL;
 				int newval = nrow * size + (ncol+1);
 				queInt.add(newval);
 			}
