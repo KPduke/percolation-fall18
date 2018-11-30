@@ -8,11 +8,10 @@ public class PercolationDFSFast extends PercolationDFS {
 	@Override
 	protected void updateOnOpen(int row, int col) {
 		
-		if(! inBounds(row,col)) {
+		if(!inBounds(row,col)) {
 			throw new IndexOutOfBoundsException(
 					String.format("(%d,%d) not in bounds", row,col));
 		}
-
 		if(row == 0){
 			myGrid[row][col] = FULL;	
 		}

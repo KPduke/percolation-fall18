@@ -8,6 +8,11 @@ public class PercolationBFS extends PercolationDFSFast{
 	
 	@Override
 	protected void dfs(int row, int col) {
+		
+		if(!inBounds(row,col)) {
+			throw new IndexOutOfBoundsException (
+					String.format("(%d,%d) not in bounds", row,col));
+		}
 
 		int size = myGrid.length;
 		int val = row*size + col;
@@ -34,12 +39,12 @@ public class PercolationBFS extends PercolationDFSFast{
 				queInt.add(newval);
 			}
 		
-			if(!isFull(nrow, ncol+1) && inBounds(nrow, ncol+1) && isOpen(nrow, ncol + 1)) {
+			if(!isFull(nrow, ncol+1) && inBounds(nrow, ncol+1) && isOpen(nrow, ncol+1)) {
 				myGrid[nrow][col+1] = FULL;
 				int newval = nrow * size + (ncol+1);
 				queInt.add(newval);
 			}
-			if(!isFull(nrow, ncol - 1) && inBounds(nrow, ncol -1) && isOpen(nrow, ncol - 1)) {
+			if(!isFull(nrow, ncol-1) && inBounds(nrow, ncol -1) && isOpen(nrow, ncol-1)) {
 					myGrid[nrow][ncol-1] = FULL;
 					int newval = nrow * size + (ncol-1);
 					queInt.add(newval);
@@ -49,7 +54,5 @@ public class PercolationBFS extends PercolationDFSFast{
 		
 	}
 	
-        
-	
-		
 }
+
