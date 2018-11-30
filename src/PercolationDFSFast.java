@@ -3,7 +3,6 @@ public class PercolationDFSFast extends PercolationDFS {
 
 	public PercolationDFSFast(int n) {
 		super(n);	
-	
 	}
 	@Override
 	protected void updateOnOpen(int row, int col) {
@@ -15,16 +14,16 @@ public class PercolationDFSFast extends PercolationDFS {
 		if(row == 0){
 			myGrid[row][col] = FULL;	
 		}
-		else if(isFull(row -1, col) && inBounds(row-1, col)){
+		else if(inBounds(row-1, col) && isFull(row -1, col)){
 			myGrid[row][col] = FULL;
 		}
-		else if(isFull(row+1, col) && inBounds(row+1, col)) {
+		else if(inBounds(row+1, col) && isFull(row+1, col)) {
 			myGrid[row][col] = FULL;
 		}
-		else if(isFull(row, col+1) && inBounds(row, col+1)) {
+		else if(inBounds(row, col+1) && isFull(row, col+1)) {
 			myGrid[row][col] = FULL;
 		}
-		else if(isFull(row, col - 1) && inBounds(row, col -1)) {
+		else if( inBounds(row, col -1) && isFull(row, col - 1)) {
 				myGrid[row][col] = FULL;
 		}
 		if (myGrid[row][col] == FULL) {
