@@ -9,7 +9,7 @@ public class PercolationUF implements IPercolate {
 
 	public PercolationUF (int n, IUnionFind finder) {
 		finder.initialize(n*n + 2); 
-		myFinder = (QuickUWPC) finder;
+		myFinder = finder;
 		VTOP = n*n;
 		VBOTTOM = n*n + 1;
 		myGrid = new int[n][n];
