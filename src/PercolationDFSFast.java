@@ -31,6 +31,4 @@ public class PercolationDFSFast extends PercolationDFS {
 	
 }
 	
-//int j = 0;
-//if j == 1;
 
